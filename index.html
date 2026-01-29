@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Syne',sans-serif;
+  background:#070707;
+  color:white;
+  overflow-x:hidden;
+}
+html{scroll-behavior:smooth}
+
+nav{
+  position:fixed;
+  width:100%;
+  padding:20px;
+  text-align:center;
+  backdrop-filter:blur(8px);
+  background:rgba(0,0,0,.3);
+  font-size:14px;
+  letter-spacing:3px;
+  z-index:10;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:100px 20px 40px;
+}
+.hero h1{
+  font-size:clamp(38px,9vw,70px);
+  line-height:1.1;
+}
+.hero p{margin-top:15px;color:#aaa;}
+
+.float-btn{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:14px 40px;
+  border-radius:40px;
+  background:white;
+  color:black;
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:2px;
+  z-index:20;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+.flow{
+  max-width:500px;
+  margin:auto;
+  padding:120px 20px 60px;
+  text-align:center;
+}
+
+.step{display:none;animation:fade .4s ease;}
+.step.active{display:block;}
+
+h2{font-size:28px;margin-bottom:10px;}
+p{opacity:.6;margin-bottom:25px;}
+
+.options{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+button{
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.05);
+  color:white;
+  font-family:'Syne',sans-serif;
+  font-size:15px;
+  cursor:pointer;
+  transition:.25s;
+}
+button:hover{background:white;color:black;}
+
+textarea,input{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.05);
+  color:white;
+  margin-bottom:12px;
+  font-family:'Syne',sans-serif;
+}
+
+.gallery{
+  padding:80px 20px;
+  max-width:700px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.gallery div{
+  height:160px;
+  background:#1a1a1a;
+  border-radius:16px;
+}
+
+footer{
+  text-align:center;
+  padding:80px 20px;
+  color:#555;
+  font-size:13px;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<nav>QUISSCO</nav>
+
+<div class="hero">
+  <div>
+    <h1>Diseño. Tattoo. Personalidad.</h1>
+    <p>Arte para tu piel</p>
+  </div>
+</div>
+
+<a href="#cotizar" class="float-btn">COTIZAR</a>
+
+<section class="flow" id="cotizar">
+
+  <div class="step active" data-step="1">
+    <h2>Comencemos tu diseño</h2>
+    <p>¿Qué estilo te gustaría?</p>
+    <div class="options">
+      <button>Fine Line</button>
+      <button>Fine Line y Color</button>
+      <button>Realismo Blanco y Negro</button>
+      <button>Cover Up</button>
+      <button>No estoy seguro</button>
+    </div>
+  </div>
+
+  <div class="step" data-step="2">
+    <h2>¿Dónde iría el tatuaje?</h2>
+    <div class="options">
+      <button>Brazo</button>
+      <button>Pierna</button>
+      <button>Pecho</button>
+      <button>Espalda</button>
+      <button>Otro</button>
+    </div>
+  </div>
+
+  <div class="step" data-step="3">
+    <h2>Tamaño aproximado</h2>
+    <div class="options">
+      <button>Pequeño</button>
+      <button>Mediano</button>
+      <button>Grande</button>
+    </div>
+  </div>
+
+  <div class="step" data-step="4">
+    <h2>Cuéntame tu idea</h2>
+    <textarea placeholder="Significado, inspiración o referencia..."></textarea>
+    <button class="next">Continuar</button>
+  </div>
+
+  <div class="step" data-step="5">
+    <h2>Datos de contacto</h2>
+    <input type="text" placeholder="Tu nombre">
+    <input type="text" placeholder="Instagram o WhatsApp">
+    <button class="submit">Enviar mi proyecto</button>
+  </div>
+
+  <div class="step" data-step="6">
+    <h2>Tu idea ya está en proceso ✨</h2>
+    <p>Revisaré tu propuesta y te enviaré diseño y presupuesto.</p>
+  </div>
+
+</section>
+
+<section class="gallery">
+  <div></div><div></div><div></div><div></div>
+</section>
+
+<footer>Solo con reserva previa — 2026</footer>
+
+<script>
+const steps = document.querySelectorAll(".step");
+let currentStep = 0;
+
+let formData = {estilo:"",zona:"",tamano:"",idea:"",nombre:"",contacto:""};
+
+function goToStep(index){
+  steps[currentStep].classList.remove("active");
+  currentStep = index;
+  steps[currentStep].classList.add("active");
+}
+
+document.querySelectorAll(".options button").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    const step = steps[currentStep].dataset.step;
+    if(step=="1") formData.estilo=btn.innerText;
+    if(step=="2") formData.zona=btn.innerText;
+    if(step=="3") formData.tamano=btn.innerText;
+    goToStep(currentStep+1);
+  });
+});
+
+document.querySelector(".next").addEventListener("click", ()=>{
+  formData.idea=document.querySelector("textarea").value;
+  goToStep(currentStep+1);
+});
+
+document.querySelector(".submit").addEventListener("click", ()=>{
+  formData.nombre=document.querySelector('input[placeholder="Tu nombre"]').value;
+  formData.contacto=document.querySelector('input[placeholder="Instagram o WhatsApp"]').value;
+
+  const mensaje=`Hola, quiero cotizar un tatuaje:
+
+🖋 Estilo: ${formData.estilo}
+📍 Zona: ${formData.zona}
+📏 Tamaño: ${formData.tamano}
+💡 Idea: ${formData.idea}
+🙋 Nombre: ${formData.nombre}
+📲 Contacto: ${formData.contacto}`;
+
+  const telefono="+56954105628"; 
+  const url=`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url,"_blank");
+  goToStep(currentStep+1);
+});
+</script>
+
+</body>
+</html>
