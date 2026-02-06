@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidados - QUISSCO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .logo {
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 60px;
+            opacity: 0.7;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .care-item {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .care-item:last-child {
+            border-bottom: none;
+        }
+
+        .care-item h2 {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: -0.01em;
+        }
+
+        .care-item p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .care-item strong {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 40px;
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .highlight-box h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .product-name {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 15px 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 100px 0 60px;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: #fff;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 40px;
+            padding: 12px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            header {
+                margin-bottom: 60px;
+            }
+
+            .care-item {
+                margin-bottom: 50px;
+                padding-bottom: 30px;
+            }
+
+            .highlight-box {
+                padding: 30px 20px;
+                margin: 60px 0;
+            }
+
+            .cta-section {
+                margin: 80px 0 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Studio QUISSCO</div>
+            <h1>Cuidados</h1>
+            <p class="subtitle">Sigue estas instrucciones para que tu tatuaje sane perfectamente</p>
+        </header>
+
+        <main>
+            <div class="care-item">
+                <h2>Primer parche</h2>
+                <p>Mantén tu primer parche <strong>máximo 24 hrs.</strong> Si ves que está con mucho líquido o se despegó, retira tu parche con cuidado.</p>
+            </div>
+
+            <div class="care-item">
+                <h2>Limpieza</h2>
+                <p><strong>Lava con agua y jabón.</strong> Usa agua tibia y jabón neutro, limpia suavemente sin frotar.</p>
+            </div>
+
+            <div class="care-item">
+                <h2>Secado</h2>
+                <p><strong>Sécalo con papel absorbente</strong> y aplica tu crema de cicatrización. No uses toallas de tela.</p>
+            </div>
+
+            <div class="care-item">
+                <h2>Crema recomendada</h2>
+                <p>Te recomiendo <strong>Aquaphor de Eucerin.</strong> Aplica una capa fina 2-3 veces al día.</p>
+            </div>
+
+            <div class="care-item">
+                <h2>Actividades</h2>
+                <p><strong>Evita el roce directo, deportes de contacto o exceso de sudor</strong> la primera semana. Usa ropa holgada.</p>
+            </div>
+
+            <div class="care-item">
+                <h2>Agua</h2>
+                <p><strong>Evita piscina o mar la primera semana,</strong> a menos que utilices un parche impermeable para heridas.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h2>Producto recomendado</h2>
+                <div class="product-name">Aquaphor de Eucerin</div>
+                <p>La mejor crema de cicatrización para mantener tu tatuaje en perfectas condiciones y preservar los colores vibrantes.</p>
+            </div>
+
+            <div class="cta-section">
+                <h2>¿Tienes dudas?</h2>
+                <p style="color: rgba(255,255,255,0.6); margin-bottom: 30px;">Cuida tu tattoo. Cualquier duda escríbeme</p>
+                <a href="https://wa.me/56954105628" class="whatsapp-btn" target="_blank">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    WhatsApp +56 9 5410 5628
+                </a>
+                <br>
+                <a href="index.html" class="back-link">Volver al inicio</a>
+            </div>
+        </main>
+
+        <footer>
+            Solo con reserva previa — 2026
+        </footer>
+    </div>
+</body>
+</html>
